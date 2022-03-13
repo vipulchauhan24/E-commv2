@@ -1,0 +1,13 @@
+body, *{
+  font-family: 'Open Sans', sans-serif !important;
+}
+.flex{
+  display: flex;
+  &.align-items-center{
+    align-items: center;
+  } 
+
+  &.justify-content-between{
+    justify-content: space-between;
+  }
+} 
