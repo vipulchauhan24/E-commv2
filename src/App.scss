@@ -10,4 +10,7 @@ body, *{
   &.justify-content-between{
     justify-content: space-between;
   }
+  &.justify-content-end{
+    justify-content: flex-end;
+  }
 } 
