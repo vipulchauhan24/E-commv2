@@ -1,16 +1,13 @@
 body, *{
   font-family: 'Open Sans', sans-serif !important;
 }
-.flex{
-  display: flex;
-  &.align-items-center{
-    align-items: center;
-  } 
-
-  &.justify-content-between{
-    justify-content: space-between;
-  }
-  &.justify-content-end{
-    justify-content: flex-end;
-  }
-} 
+.cart{
+  position: absolute;
+  top: 110%;
+  height: calc(100vh - 175px);
+  right: 0;
+  background-color: #FFF;
+  border: 1px solid #000;
+  width: 25rem;
+  z-index: 1200;
+}

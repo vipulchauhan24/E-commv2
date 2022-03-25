@@ -1,14 +1,15 @@
 import './App.scss';
 import React, { useEffect } from 'react';
-import HomepageComponent from './Pages/Homepage/Homepage.component';
-import OnboardingComponent from './Pages/Onboarding/Onboarding.component';
+import HomepageComponent from './Pages/Homepage';
+import OnboardingComponent from './Pages/Onboarding';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HeaderComponent from './Components/Header/Header.component';
-import ShopComponent from './Pages/Shop/Shop.component';
+import HeaderComponent from './Components/Header/index';
+import ShopComponent from './Pages/Shop/index';
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch } from 'react-redux';
-import { signIn, signOutAction } from './Redux/Actions';
-import {getUserDetailsFromDatabase} from './Firebase/Firebase.util'
+import { signIn, signOutAction } from './Redux/User/action';
+import {getUserDetailsFromDatabase} from './Firebase/Firebase.util';
+
 const  App = () => {
   // unsubScribeFromAuth = null
   const dispatch = useDispatch();

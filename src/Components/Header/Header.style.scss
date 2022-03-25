@@ -1,18 +1,19 @@
-.flex{
-    display: flex;
-    &.align-items-center{
-      align-items: center;
-    } 
-  
-    &.justify-content-between{
-      justify-content: space-between;
-    }
-} 
 .MuiTab-root.Mui-selected{
-    color: inherit !important;
+  color: inherit !important;
 }
 
 .MuiTabs-indicator.css-1aquho2-MuiTabs-indicator{
-    background-color: transparent !important;
-    display: none !important;
+  background-color: transparent !important;
+  display: none !important;
+}
+
+.cart__icon{
+  position: relative;
+  cursor: pointer;
+  .cart__count{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
 }

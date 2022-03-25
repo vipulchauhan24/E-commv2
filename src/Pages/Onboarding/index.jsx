@@ -1,8 +1,8 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import SigninContainer from './signin.component';
-import SignupContainer from './signup.component';
+import SigninContainer from '../../Components/Signin';
+import SignupContainer from '../../Components/Signup';
 
 
 export default function OnboardingComponent() {
