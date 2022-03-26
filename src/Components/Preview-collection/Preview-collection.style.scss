@@ -1,0 +1,40 @@
+.shop-details{
+    &.MuiImageListItemBar-root{
+        top: 80%;
+        left: 50%;
+        max-width: 100%;
+        transform: translate(-50%,0);
+        text-align: center;
+        background-color: #FFF;
+        opacity: 0;
+        max-height: 2.5rem;
+    }
+    
+}
+.MuiImageList-root{
+    gap: 16px !important;
+}
+.MuiImageListItemBar-title{
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    color: #000;
+}
+.MuiImageListItemBar-subtitle{
+    color: #000;
+}
+.MuiImageListItem-root{
+    overflow: clip;
+    cursor: pointer;
+    &:hover{
+        .thumbnail-img{
+            transform: scale(1.2);
+            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        }
+        .shop-details{
+            &.MuiImageListItemBar-root{
+                opacity: 0.9;
+            }
+            
+        }
+    }
+}
