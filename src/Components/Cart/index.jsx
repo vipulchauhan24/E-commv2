@@ -17,13 +17,13 @@ const Cart = ({cart}) =>{
                                         <ListItemButton>
                                             <ListItemIcon>
                                             <img
-                                            width={'3rem'}
+                                            style={{width : '3rem'}}
                                             src={item.imageUrl}
                                             alt={item.name}
                                             loading="lazy"
                                             />
                                             </ListItemIcon>
-                                            <ListItemText primary={item.name} />
+                                            <ListItemText primary={item.name} secondary={item.quantity + ' X INR ' +item.price}/>
                                         </ListItemButton>
                                     </ListItem>
                                 )

@@ -20,10 +20,10 @@ const userReducer = (state = initialState, action) =>{
             }
             
         case ACTION_TYPES.ADD_TO_CART:
-            state.payload.cart.push(action.payload.item)
+            state.cart.push(action.payload.item)
             return {
                 ...state,
-                cart : state.payload.cart
+                cart : state.cart
             }
         
         default:

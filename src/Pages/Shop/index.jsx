@@ -4,13 +4,13 @@ import PreviewCollectionComponent from '../../Components/Preview-collection/Prev
 import SHOP_DATA from '../../Constants/shop.data';
 export default class ShopComponent extends Component {
     constructor(props){
-        super(props);
-        this.state = {
-            collection : SHOP_DATA
-        }
+      super(props);
+      this.state = {
+          collection : SHOP_DATA
+      }
     }
   render() {
-      const {collection} = this.state
+    const {collection} = this.state
     return (
       <Box>
           {
