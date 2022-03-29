@@ -1,7 +1,7 @@
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import useLoadCategories from '../../Hooks/useLoadCategories';
+import useLoadCategories from '../../Hooks/useLoadCategories'
 import './homepage.scss';
 
 
@@ -30,7 +30,7 @@ const HomepageComponent = () => {
             </ImageListItem>
         ))}
     </ImageList>
-);
+    );
 }
 
 export default HomepageComponent;
