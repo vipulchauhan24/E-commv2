@@ -1,20 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartData } from "../Constants/cart.data";
-import { loadCart } from "../Redux/Cart/action";
+import { loadCartQuantity } from "../Redux/Cart/action";
 import { cartSelectors } from "../Redux/Cart/selector";
 
-const useLoadCart = () => {
-    const {cart} = useSelector(cartSelectors)
+const useCardQuantity = () => {
+    const {quantity} = useSelector(cartSelectors)
 
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(loadCart(1, cartData))
+        dispatch(loadCartQuantity(1, cartData))
         
     }, []);
 
-    return cart;
+    return quantity;
 }
 
-export default useLoadCart;
+export default useCardQuantity;

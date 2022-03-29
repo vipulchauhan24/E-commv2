@@ -2,7 +2,20 @@ import { ACTION_TYPES } from "./actionTypes";
 
 const initialState = {
     hidden : true,
-    cart : []
+    cart : [],
+    quantity : 0
+}
+
+const addToCart = (item, cart) =>{
+    const id = item.id;
+    for(let index = 0; index < cart.length; index++){
+        if(`${id}` === `${cart[index].id}`){
+            cart[index].quantity++;
+            return cart;
+        }
+    }
+    cart.push(item);
+    return cart;
 }
 
 const userReducer = (state = initialState, action) =>{
@@ -20,10 +33,21 @@ const userReducer = (state = initialState, action) =>{
             }
             
         case ACTION_TYPES.ADD_TO_CART:
-            state.cart.push(action.payload.item)
+            state.quantity++;
             return {
                 ...state,
-                cart : state.cart
+                cart : addToCart(action.payload.item, state.cart)
+            }
+
+        case ACTION_TYPES.LOAD_CART_QUANTITIES:
+            const count = state.cart.reduce((total, item)=>{
+                return total + item.quantity;
+              },0);
+
+            return {
+                ...state,
+                cart : state.cart,
+                quantity : count
             }
         
         default:

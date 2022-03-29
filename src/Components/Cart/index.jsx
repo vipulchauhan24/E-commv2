@@ -7,7 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 const Cart = ({cart}) =>{
     return (
         <Box className="cart">
-            <Box height={'calc(100vh - 220px) '}>
+            <Box height={'calc(100vh - 220px) '} overflow={'auto'}>
                 <List>
                     {
                         cart ? (

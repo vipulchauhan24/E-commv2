@@ -9,16 +9,19 @@ import { useEffect,useState } from 'react';
 import Cart from '../Cart/index';
 import {toggleCart} from '../../Redux/Cart/action';
 import useLoadCart from '../../Hooks/useLoadCart';
+import useCardQuantity from '../../Hooks/useCartQuantity';
+import { cartSelectors } from '../../Redux/Cart/selector';
 export default function HeaderComponent({signOutofApp}) {
 
   const [routes, setRoutes] = useState(["/shop", "/contact","/sign-in"])
   const [value, setValue] = React.useState(window.location.pathname);
   const {displayName} = useSelector(state => state.user);
-  const {hidden} = useSelector(state => state.cart);
+  const {hidden} = useSelector(cartSelectors);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cart = useLoadCart();
-
+  const cartItemCount = useCardQuantity();
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -78,7 +81,7 @@ export default function HeaderComponent({signOutofApp}) {
             <Box display={'flex'} alignItems={'center'} justifyContent={'end'} columnGap={'0.5rem'} flexBasis={'9%'}>
               <Box onClick={()=>{dispatch(toggleCart())}} className="cart__icon">
                 <img  style={{width : '2rem'}} src="/images/shopping-bag.svg" alt="cart"/>
-                <Box component={'span'} className='cart__count'>0</Box>
+                <Box component={'span'} className='cart__count'>{cartItemCount}</Box>
                 {
                   !hidden ? (
                     <Cart cart={cart}/>
@@ -93,10 +96,12 @@ export default function HeaderComponent({signOutofApp}) {
             <Box display={'flex'} alignItems={'center'} justifyContent={'end'}>
               <Box onClick={()=>{dispatch(toggleCart())}} className="cart__icon">
                 <img  style={{width : '2rem'}} src="/images/shopping-bag.svg" alt="cart"/>
-                <Box component={'span'} className='cart__count'>0</Box>
+                <Box component={'span'} className='cart__count'>{cartItemCount}</Box>
                 {
                   !hidden ? (
-                    <Cart cart={cart}/>
+                    <>
+                      <Cart cart={cart}/>
+                    </>
                   ):(null)
                 }
               </Box>
