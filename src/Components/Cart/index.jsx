@@ -1,16 +1,17 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import { Link } from "react-router-dom";
 const Cart = ({cart}) =>{
     return (
         <Box className="cart">
             <Box height={'calc(100vh - 220px) '} overflow={'auto'}>
                 <List>
                     {
-                        cart ? (
+                        cart.length > 0 ? (
                             cart.map(item => {
                                 return (
                                     <ListItem key={item.id} disablePadding>
@@ -28,12 +29,16 @@ const Cart = ({cart}) =>{
                                     </ListItem>
                                 )
                             })
-                        ) : (null)
+                        ) : (
+                            <Typography textAlign={'center'} variant="h6">Cart is Empty!</Typography>
+                        )
                     }
                 </List>
             </Box>
             <Box padding={'0 0.5rem'}>
-                <Button variant="contained" fullWidth={true}>Checkout</Button>
+                <Link to="/checkout">
+                    <Button variant="contained" fullWidth={true}>Checkout</Button>
+                </Link>
             </Box>
         </Box>
     )

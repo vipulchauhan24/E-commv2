@@ -12,6 +12,7 @@ const useCardQuantity = () => {
     useEffect(()=>{
         dispatch(loadCartQuantity(1, cartData))
         
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return quantity;

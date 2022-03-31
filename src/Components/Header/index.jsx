@@ -11,11 +11,12 @@ import {toggleCart} from '../../Redux/Cart/action';
 import useLoadCart from '../../Hooks/useLoadCart';
 import useCardQuantity from '../../Hooks/useCartQuantity';
 import { cartSelectors } from '../../Redux/Cart/selector';
+import userSelector from '../../Redux/User/selector';
 export default function HeaderComponent({signOutofApp}) {
 
   const [routes, setRoutes] = useState(["/shop", "/contact","/sign-in"])
   const [value, setValue] = React.useState(window.location.pathname);
-  const {displayName} = useSelector(state => state.user);
+  const {displayName} = useSelector(userSelector);
   const {hidden} = useSelector(cartSelectors);
   const dispatch = useDispatch();
   const navigate = useNavigate();

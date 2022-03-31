@@ -5,7 +5,7 @@ import SigninContainer from '../../Components/Signin';
 import SignupContainer from '../../Components/Signup';
 
 
-export default function OnboardingComponent() {
+export default function OnboardingContainer() {
 
   return (
     <Box sx={{ flexGrow: 1 , padding : '1.5rem'}}>

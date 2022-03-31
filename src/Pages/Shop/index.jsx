@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import React, { Component } from 'react'
 import PreviewCollectionComponent from '../../Components/Preview-collection/Preview-collection.component';
 import SHOP_DATA from '../../Constants/shop.data';
-export default class ShopComponent extends Component {
+export default class ShopContainer extends Component {
     constructor(props){
       super(props);
       this.state = {

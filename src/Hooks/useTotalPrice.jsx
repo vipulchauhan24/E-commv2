@@ -1,21 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartData } from "../Constants/cart.data";
-import { loadCart } from "../Redux/Cart/action";
+import { getTotalPrice } from "../Redux/Cart/action";
 import { cartSelectors } from "../Redux/Cart/selector";
 
-const useLoadCart = () => {
-    const {cart} = useSelector(cartSelectors)
+const useTotalPrice = () => {
+    const {totalPrice} = useSelector(cartSelectors)
 
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(loadCart(1, cartData))
-        
+        dispatch(getTotalPrice(1, cartData))
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    return cart;
+    return totalPrice;
 }
 
-export default useLoadCart;
+export default useTotalPrice;

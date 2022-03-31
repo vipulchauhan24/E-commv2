@@ -11,3 +11,11 @@ body, *{
   width: 20rem;
   z-index: 1200;
 }
+
+.MuiPaper-root{
+  box-shadow: none !important;
+}
+
+.MuiTableCell-head{
+  font-weight: 700 !important;
+}

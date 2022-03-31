@@ -1,14 +1,15 @@
 import './App.scss';
 import React, { useEffect } from 'react';
-import HomepageComponent from './Pages/Homepage';
-import OnboardingComponent from './Pages/Onboarding';
+import HomepageContainer from './Pages/Homepage';
+import OnboardingContainer from './Pages/Onboarding';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HeaderComponent from './Components/Header/index';
-import ShopComponent from './Pages/Shop/index';
+import ShopContainer from './Pages/Shop/index';
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { signIn, signOutAction } from './Redux/User/action';
 import {getUserDetailsFromDatabase} from './Firebase/Firebase.util';
+import CheckoutContainer from './Pages/Checkout';
 
 const  App = () => {
   // unsubScribeFromAuth = null
@@ -48,9 +49,10 @@ const  App = () => {
     <BrowserRouter>
       <HeaderComponent signOutofApp={signOutofApp}/>
       <Routes>
-        <Route exact path="/" element={<HomepageComponent />} />
-        <Route exact path="/sign-in" element={<OnboardingComponent />} />
-        <Route exact path="/shop" element={<ShopComponent />} />
+        <Route exact path="/" element={<HomepageContainer />} />
+        <Route exact path="/sign-in" element={<OnboardingContainer />} />
+        <Route exact path="/shop" element={<ShopContainer />} />
+        <Route exact path="/checkout" element={<CheckoutContainer />} />
       </Routes>
     </BrowserRouter>
   );

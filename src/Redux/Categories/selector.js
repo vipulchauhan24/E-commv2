@@ -4,5 +4,5 @@ const getCategories = (state) => state.category;
 
 export const categoriesSelector = createSelector(
     [getCategories],
-    (categories) => categories   
+    (category) => category   
 )

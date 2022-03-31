@@ -9,6 +9,7 @@ const useLoadCategories = () => {
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(loadCategories(categoryList))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return categories;
