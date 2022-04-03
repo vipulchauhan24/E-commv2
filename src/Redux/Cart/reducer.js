@@ -66,8 +66,7 @@ const userReducer = (state = initialState, action) =>{
         
         case ACTION_TYPES.LOAD_CART_ITEMS:
             return {
-                ...state,
-                cart : action.payload.cart
+                ...state
             }
             
         case ACTION_TYPES.ADD_TO_CART:

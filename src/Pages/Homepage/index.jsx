@@ -17,7 +17,7 @@ const HomepageContainer = () => {
             rowHeight={121}
             >
             {categories.map((item) => (
-                <ImageListItem style={{border: '1px solid #000;'}} key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                <ImageListItem style={{border: '1px solid #000'}} key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
                     <img
                         src={item.img}
                         alt={item.title}

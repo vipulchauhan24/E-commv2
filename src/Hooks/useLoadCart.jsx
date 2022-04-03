@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cartData } from "../Constants/cart.data";
 import { loadCart } from "../Redux/Cart/action";
 import { cartSelectors } from "../Redux/Cart/selector";
 
@@ -10,7 +9,7 @@ const useLoadCart = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(loadCart(1, cartData))
+        dispatch(loadCart(1))
         
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
